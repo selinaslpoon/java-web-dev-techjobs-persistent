@@ -1,10 +1,14 @@
 package org.launchcode.javawebdevtechjobspersistent.models;
 
 import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Skill extends AbstractEntity {
 
+    @NotBlank
+    @Size(max=100)
     private String description;
 
     public Skill () {}
@@ -13,11 +17,11 @@ public class Skill extends AbstractEntity {
         this.description = description;
     }
 
-    public String getLocation() {
+    public String getDescription() {
         return description;
     }
 
-    public void setLocation(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
 }
